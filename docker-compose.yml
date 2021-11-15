@@ -9,7 +9,7 @@ services:
     ports:
       - "127.0.0.1:6688:6688"
     env_file:
-      - "chainlink.env"
+      - "chainlink.xdai.env"
     links:
       - "db"
     depends_on:
