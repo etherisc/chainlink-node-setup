@@ -70,9 +70,10 @@ export PASSWORD=<chainlink admin user password>
 curl -c ./cookie -H 'Content-Type: application/json' -d '{"email":"'${USERNAME}'", "PASSWORD":"'${PASSWORD}'"}' localhost:6688/sessions
 ```
 
-example: use the cookie to list the oracle node jobs
+examples below: use the cookie to show the node's accounting address and list the oracle node jobs
 
 ```bash
+curl -b ./cookie -c ./cookie localhost:6688/v2/keys/eth
 curl -b ./cookie -c ./cookie localhost:6688/v2/jobs
 ```
 
