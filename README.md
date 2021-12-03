@@ -130,3 +130,22 @@ ssh -L 5432:localhost:5432 <user>@<ip-address>
 * `<db-password>` the db user password (see postgres.env)
 * `<user>` your ssh username
 * `<ip-address>` the ip address of the machine where your chainlink node runs
+
+## operator contract deployment
+
+```bash
+cd operator
+docker run -it --rm \
+    -v $PWD:/projects/operator \
+    brownie
+```
+
+inside container
+
+```bash
+cd operator
+brownie pm install OpenZeppelin/openzeppelin-contracts@4.3.2
+brownie pm install smartcontractkit/chainlink-brownie-contracts@0.2.2
+brownie compile
+brownie run deploy
+```

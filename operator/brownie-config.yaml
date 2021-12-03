@@ -1,0 +1,31 @@
+dependencies:
+  - smartcontractkit/chainlink-brownie-contracts@0.2.2
+  - OpenZeppelin/openzeppelin-contracts@4.3.2
+compiler:
+  solc:
+    remappings:
+      # see https://github.com/smartcontractkit/chainlink-mix/blob/master/brownie-config.yaml
+      # https://github.com/smartcontractkit/chainlink-brownie-contracts
+      - '@chainlink=smartcontractkit/chainlink-brownie-contracts@0.2.2'
+      - '@openzeppelin=OpenZeppelin/openzeppelin-contracts@4.3.2'
+
+wallets:
+  from_key: ${PRIVATE_KEY}
+  from_mnemonic: ${MNEMONIC}
+
+networks:
+  default: development
+  development:
+    fee: 100000000000000000
+    verify: False
+  xdai-main:
+    # https://docs.chain.link/docs/link-token-contracts/
+    link_token: '0x326C977E6efc84E512bB9C30f76E30c160eD06FB'
+    keyhash: '0x6e75b569a01ef56d18cab6a8e71e6600d6ce853834d4a5748b720d06f878b3a4'
+    fee: 1000000000000000000
+  polygon-main:
+    link_token: '0xb0897686c545045afc77cf20ec7a532e3120e0f1'
+    fee: 1000000000000000000
+  polygon-test:
+    link_token: '0x326C977E6efc84E512bB9C30f76E30c160eD06FB'
+    fee: 1000000000000000000
