@@ -17,7 +17,7 @@ KEYSTORE_FILE = '{}/keystore.json'.format(CHAINLINK_DIR)
 PASSWORD_FILE = '{}/password'.format(CHAINLINK_DIR)
 
 # output file with address of deployed operator
-OPERATOR_ADDRESS_FILE = './operator.address'
+OPERATOR_ADDRESS_FILE = '{}/operator.address'.format(CHAINLINK_DIR)
 
 
 def get_node_account():
