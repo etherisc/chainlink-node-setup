@@ -1,6 +1,6 @@
 type = "directrequest"
 schemaVersion = 1
-name = "Get > Uint256"
+name = "ExchangeRateSampleJob (Get > Uint256)"
 # External Job ID (UUID)
 externalJobID = "baa05315-d93f-4ce4-b602-a0cd95247dd3"
 contractAddress = "${OPERATOR_ADDRESS}"
