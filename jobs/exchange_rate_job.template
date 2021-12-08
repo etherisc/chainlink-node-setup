@@ -1,9 +1,10 @@
 type = "directrequest"
 schemaVersion = 1
+
 name = "ExchangeRateSampleJob (Get > Uint256)"
-# External Job ID (UUID)
-externalJobID = "baa05315-d93f-4ce4-b602-a0cd95247dd3"
 contractAddress = "${OPERATOR_ADDRESS}"
+externalJobID = "baa05315-d93f-4ce4-b602-a0cd95247dd3"
+
 maxTaskDuration = "0s"
 observationSource = """
     decode_log   [type="ethabidecodelog"
@@ -24,4 +25,3 @@ observationSource = """
 
     decode_log -> decode_cbor -> fetch -> parse -> multiply -> encode_data -> encode_tx -> submit_tx
 """
-
