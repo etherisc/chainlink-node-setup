@@ -24,9 +24,9 @@ eg the template file for polygon-test is `chainlink-polygon-test.env`.
 
 to create a new template file:
 
-. copy `chainlink-xdai-main.env` to `chainlink-<network-key>.env`
-. adapt variable `ETH_CHAIN_ID` to its network-specific value
-. adapt variable `LINK_CONTRACT_ADDRESS` to its network-specific value
+1. copy `chainlink-xdai-main.env` to `chainlink-<network-key>.env`
+1. adapt variable `ETH_CHAIN_ID` to its network-specific value
+1. adapt variable `LINK_CONTRACT_ADDRESS` to its network-specific value
 
 to find the right values check with the [Chainlink documentation](https://docs.chain.link/docs/link-token-contracts/).
 
