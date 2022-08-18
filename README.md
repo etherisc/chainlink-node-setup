@@ -8,6 +8,28 @@ chainlink node setup using xdai.
 * [chainlink node with docker-compose](https://github.com/koslib/chainlink-docker-compose)
 * [chainlink api](https://stackoverflow.com/questions/70008002/authorization-for-chainlink-node-v2-api)
 
+## using this repo with a new network (chain)
+
+currently templates are provided for the following networks
+
+* xdai-main
+* polygon-main
+* polygon-test
+* avax-main
+* avax-test
+
+when any additional network needs to be supported a corresponding template file needs to be added to this repo.
+
+eg the template file for polygon-test is `chainlink-polygon-test.env`.
+
+to create a new template file:
+
+. copy `chainlink-xdai-main.env` to `chainlink-<network-key>.env`
+. adapt variable `ETH_CHAIN_ID` to its network-specific value
+. adapt variable `LINK_CONTRACT_ADDRESS` to its network-specific value
+
+to find the right values check with the [Chainlink documentation](https://docs.chain.link/docs/link-token-contracts/).
+
 ## content of repo
 
 public part of config files for virtual server setup.
