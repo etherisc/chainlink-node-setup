@@ -29,3 +29,9 @@ networks:
   polygon-test:
     link_token: '0x326C977E6efc84E512bB9C30f76E30c160eD06FB'
     fee: 1000000000000000000
+  avax-main:
+    link_token: '0x5947BB275c521040051D82396192181b413227A3'
+    fee: 1000000000000000000
+  avax-test:
+    link_token: '0x0b9d5D9136855f6FEc3c0993feE6E9CE8a297846'
+    fee: 1000000000000000000
