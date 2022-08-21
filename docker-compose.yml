@@ -3,7 +3,7 @@ version: "3.8"
 services:
 
   chainlink:
-    image: "smartcontract/chainlink:1.0.0"
+    image: "smartcontract/chainlink:1.7.0-root"
     # restart: always
     command: local n -p /chainlink/password -a /chainlink/api
     ports:

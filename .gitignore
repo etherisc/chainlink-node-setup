@@ -9,3 +9,10 @@ __pycache__/
 build/
 reports/
 MANIFEST
+secrets/
+*.txt
+*.log
+**/cookie
+jobs/*.json
+jobs/*.toml
+
