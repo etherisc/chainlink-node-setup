@@ -17,6 +17,7 @@ chainlink node setup using xdai.
     1. `api`: This file contains 2 lines, one line with an email address and one line with a password. These credentials are used to log into the chainlink admin UI and CLI.
     1. `password`: This file contains the password to the keystores used as node addresses for sending transactions.
     1. `keystore.mnemonic`: Put the mnemonic for the keystores in here.
+    1. `postgres.env`: Copy from `postgres.env.sample` and insert your postgres db password.
 1. Run `create_keystore.py <password> keystore`, this will create the keystore and store it in the `secrets` folder. Use the password from step 4.2
 1. Run `docker-compose up -d` to start the docker containers.
 1. Run `docker ps --all` to check if two docker containers are up and running. If one container exits, run `docker-compose up -d` again (the chainlink node expects the postgres container to be available, which may take some seconds and prevents the chainlink node to start immediately. Alternatively, remove the hash sign # in the line `# restart: always` in `docker-compose.yml`)
