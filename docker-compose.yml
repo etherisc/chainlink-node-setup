@@ -5,7 +5,7 @@ services:
   chainlink:
     image: "smartcontract/chainlink:1.7.0-root"
     # restart: always
-    command: local n -p /chainlink/password -a /chainlink/api
+    command: local n -p /chainlink/secrets/password -a /chainlink/secrets/api
     ports:
       - "127.0.0.1:6688:6688"
     env_file:

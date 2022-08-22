@@ -25,7 +25,7 @@ chainlink node setup using xdai.
 1. On the server, run `docker exec -it chainlinknode_chainlink_1 bash` to connect to the chainlink container.
 1. Run `chainlink admin login` with the credentials of step 4.1
 1. Run `chainlink keys eth list` and copy the address of the key.
-1. Run `chainlink keys eth delete <address> --hard` (replace <address> with the key just copied.)
+1. Run `chainlink keys eth delete <address> --hard` (replace <address> with the address of the key just copied.)
 1. Run `chainlink keys eth import ./secrets/keystore.json`. The keystore should be imported.
 1. Run `chainlink keys eth list`. The imported key (and nothing else) should be displayed.
 1. Fund the address. 
