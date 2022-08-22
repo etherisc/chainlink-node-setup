@@ -8,7 +8,30 @@ chainlink node setup using xdai.
 * [chainlink node with docker-compose](https://github.com/koslib/chainlink-docker-compose)
 * [chainlink api](https://stackoverflow.com/questions/70008002/authorization-for-chainlink-node-v2-api)
 
-## using this repo with a new network (chain)
+## Setting up a new node
+
+1. Clone this repo to a new cloud server
+1. Copy `chainlink-<networ>.env` to `chainlink.env`
+1. Create folder `secrets`
+1. In `secrets`, create these files: 
+    1. `api`: This file contains 2 lines, one line with an email address and one line with a password. These credentials are used to log into the chainlink admin UI and CLI.
+    1. `password`: This file contains the password to the keystores used as node addresses for sending transactions.
+    1. `keystore.mnemonic`: Put the mnemonic for the keystores in here.
+1. Run `create_keystore.py <password> keystore`, this will create the keystore and store it in the `secrets` folder. Use the password from step 4.2
+1. Run `docker-compose up -d` to start the docker containers.
+1. Run `docker ps --all` to check if two docker containers are up and running. If one container exits, run `docker-compose up -d` again (the chainlink node expects the postgres container to be available, which may take some seconds and prevents the chainlink node to start immediately. Alternatively, remove the hash sign # in the line `# restart: always` in `docker-compose.yml`)
+1. Run `docker logs chainlinknode_chainlink_1` and check if the node is running without errors.
+1. On your local machine, run `ssh -L 6688.localhost.6688 <yourServer>` and check if you can open the GUI via `localhost:6688`. 
+1. On the server, run `docker exec -it chainlinknode_chainlink_1 bash` to connect to the chainlink container.
+1. Run `chainlink admin login` with the credentials of step 4.1
+1. Run `chainlink keys eth list` and copy the address of the key.
+1. Run `chainlink keys eth delete <address> --hard` (replace <address> with the key just copied.)
+1. Run `chainlink keys eth import ./secrets/keystore.json`. The keystore should be imported.
+1. Run `chainlink keys eth list`. The imported key (and nothing else) should be displayed.
+1. Fund the address. 
+1. (to be continued)
+
+## creating .env file for new network/chain
 
 currently templates are provided for the following networks
 

@@ -4,9 +4,9 @@ import sys
 from brownie.network.account import Accounts
 
 
-ADDRESS_FILE = './{}.address'
-MNEMONIC_FILE = './{}.mnemonic'
-KEYSTORE_FILE = './{}.json'
+ADDRESS_FILE = './secrets/{}.address'
+MNEMONIC_FILE = './secrets/{}.mnemonic'
+KEYSTORE_FILE = './secrets/{}.json'
 
 def main():
     if len(sys.argv) != 3:
