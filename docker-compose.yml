@@ -20,7 +20,7 @@ services:
   db:
     image: "postgres"
     env_file:
-      - postgres.env
+      - "secrets/postgres.env"
     ports:
       - "127.0.0.1:5432:5432"
     volumes:
